@@ -212,7 +212,7 @@ def build_pdf(filename="INFORME_LABORATORIO_ESTANDARES_CODIGO.pdf"):
         ],
         [
             Paragraph("<b>Estudiante:</b>", table_cell_bold),
-            Paragraph("pakamijo", table_cell_style),
+            Paragraph("Adrian Toledo", table_cell_style),
             Paragraph("<b>Entorno Virtual:</b>", table_cell_bold),
             Paragraph(".venv / VS Code", table_cell_style),
         ],
