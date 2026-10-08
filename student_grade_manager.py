@@ -7,6 +7,9 @@ and formatted reporting while enforcing coding standards (PEP 8).
 
 from typing import Any, Optional
 
+# System version
+VERSION: str = "1.0.0"
+
 # Constants for grading thresholds and boundaries
 MIN_GRADE: float = 0.0
 MAX_GRADE: float = 100.0
