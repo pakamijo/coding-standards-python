@@ -133,5 +133,5 @@ Los reportes completos generados por las herramientas están disponibles en la c
 ---
 
 ## 👤 Autor
-- **Estudiante:** pakamijo
+- **Estudiante:** Adrian Toledo
 - **Repositorio:** [https://github.com/pakamijo/coding-standards-python](https://github.com/pakamijo/coding-standards-python)
