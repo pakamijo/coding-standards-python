@@ -1,0 +1,1 @@
+test.py:16:9: F841 local variable 'avg' is assigned to but never used

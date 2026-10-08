@@ -1,0 +1,23 @@
+************* Module test
+test.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+test.py:1:0: C0115: Missing class docstring (missing-class-docstring)
+test.py:1:0: C0103: Class name "student" doesn't conform to PascalCase naming style (invalid-name)
+test.py:6:8: C0103: Attribute name "isPassed" doesn't conform to snake_case naming style (invalid-name)
+test.py:2:4: E0213: Method '__init__' should have "self" as first argument (no-self-argument)
+test.py:2:20: W0622: Redefining built-in 'id' (redefined-builtin)
+test.py:9:4: C0116: Missing function or method docstring (missing-function-docstring)
+test.py:9:4: C0103: Method name "addGrades" doesn't conform to snake_case naming style (invalid-name)
+test.py:12:4: C0116: Missing function or method docstring (missing-function-docstring)
+test.py:16:8: W0612: Unused variable 'avg' (unused-variable)
+test.py:18:4: C0116: Missing function or method docstring (missing-function-docstring)
+test.py:18:4: C0103: Method name "checkHonor" doesn't conform to snake_case naming style (invalid-name)
+test.py:19:11: E1101: Instance of 'student' has no 'calcAverage' member; maybe 'calcaverage'? (no-member)
+test.py:22:4: C0116: Missing function or method docstring (missing-function-docstring)
+test.py:22:4: C0103: Method name "deleteGrade" doesn't conform to snake_case naming style (invalid-name)
+test.py:25:4: C0116: Missing function or method docstring (missing-function-docstring)
+test.py:29:33: E1101: Instance of 'student' has no 'letter' member (no-member)
+test.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 0.91/10 (previous run: 0.91/10, +0.00)
+

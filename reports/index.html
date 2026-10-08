@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Estándares de Codificación - SW2</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --border: #334155;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.5rem 0;
+      color: var(--primary);
+    }
+    p.lead {
+      color: var(--text-muted);
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .stat-card h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .stat-value.danger { color: var(--danger); }
+    .stat-value.success { color: var(--success); }
+    .stat-value.primary { color: var(--primary); }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .badge-danger { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+    .badge-success { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2.5rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+    }
+    th {
+      background: #111827;
+      color: var(--primary);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      border-bottom: 1px solid var(--border);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #1d4ed8;
+    }
+    .btn-secondary {
+      background: #334155;
+    }
+    .btn-secondary:hover {
+      background: #475569;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin: 2rem 0 1rem 0;
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Reporte de Estándares de Codificación (SW2)</h1>
+      <p class="lead">Auditoría Estática de Código con Pylint y Flake8 en Visual Studio Code</p>
+      <p style="margin-top: 0.5rem; color: #94a3b8; font-size: 0.95rem;">
+        <strong>Repositorio:</strong> <a href="https://github.com/pakamijo/coding-standards-python" style="color: #38bdf8;" target="_blank">github.com/pakamijo/coding-standards-python</a> |
+        <strong>Entorno:</strong> Python 3.12 (.venv) | 
+        <strong>Herramientas:</strong> Pylint, Flake8, Pytest, GitHub Actions
+      </p>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Calificación Pylint Inicial</h3>
+        <div class="stat-value danger">0.91 / 10</div>
+        <span class="badge badge-danger">18 Violaciones / Errores Fatales</span>
+      </div>
+      <div class="stat-card">
+        <h3>Calificación Pylint Final</h3>
+        <div class="stat-value success">10.00 / 10</div>
+        <span class="badge badge-success">0 Violaciones (100% PEP 8)</span>
+      </div>
+      <div class="stat-card">
+        <h3>Violaciones Flake8</h3>
+        <div class="stat-value success">0</div>
+        <span class="badge badge-success">Cumplimiento Estricto</span>
+      </div>
+      <div class="stat-card">
+        <h3>Pruebas Pytest</h3>
+        <div class="stat-value primary">9 / 9 (100%)</div>
+        <span class="badge badge-success">Requerimientos Verificados</span>
+      </div>
+    </div>
+
+    <h2 class="section-title">Comparativa de Calidad de Código</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Métrica / Criterio</th>
+          <th>Código Base Inicial (test.py)</th>
+          <th>Código Refactorizado Final</th>
+          <th>Impacto y Solución</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Puntaje Pylint</strong></td>
+          <td><span style="color: #ef4444; font-weight: bold;">0.91 / 10</span></td>
+          <td><span style="color: #22c55e; font-weight: bold;">10.00 / 10</span></td>
+          <td>+9.09 puntos (Código limpio profesional)</td>
+        </tr>
+        <tr>
+          <td><strong>Violaciones Flake8</strong></td>
+          <td>F841 (Variable local 'avg' sin usar)</td>
+          <td>0 violaciones</td>
+          <td>Corrección completa de PEP 8</td>
+        </tr>
+        <tr>
+          <td><strong>Convenciones de Nombres</strong></td>
+          <td>Clase 'student', 'isPassed', 'addGrades', etc.</td>
+          <td>'Student', 'is_honor_roll', 'add_grade'</td>
+          <td>PascalCase para clases y snake_case para métodos/variables</td>
+        </tr>
+        <tr>
+          <td><strong>Manejo de Argumento Inicial</strong></td>
+          <td>def __init__(s, id, name) [Uso de 's' e 'id' reservado]</td>
+          <td>def __init__(self, student_id, name)</td>
+          <td>Convención canónica 'self' y eliminación de colisión de nombre</td>
+        </tr>
+        <tr>
+          <td><strong>Estabilidad en Tiempo de Ejecución</strong></td>
+          <td>Crash con TypeError, ZeroDivisionError e IndexError</td>
+          <td>100% Robusto, no colapsa ante datos inválidos</td>
+          <td>Validación preventiva y mensajes claros al usuario</td>
+        </tr>
+        <tr>
+          <td><strong>Documentación y Tipado</strong></td>
+          <td>0 docstrings, sin type hints</td>
+          <td>Docstrings completos PEP 257 y anotaciones de tipo</td>
+          <td>Autodocumentación e inspección estática IDE</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">Reportes Detallados Generados</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+      <div class="stat-card">
+        <h3>Reportes Iniciales (Código Base)</h3>
+        <p style="color: #94a3b8; font-size: 0.95rem;">Análisis realizado sobre el código original no modificado que presentaba 18 infracciones.</p>
+        <div class="btn-group">
+          <a class="btn btn-secondary" href="initial/pylint_report.html">Ver Reporte Pylint Inicial (HTML)</a>
+          <a class="btn btn-secondary" href="initial/flake8/index.html">Ver Reporte Flake8 Inicial (HTML)</a>
+        </div>
+      </div>
+      <div class="stat-card">
+        <h3>Reportes Finales (Código Refactorizado)</h3>
+        <p style="color: #94a3b8; font-size: 0.95rem;">Análisis realizado sobre la solución refactorizada alcanzando 10.00/10.</p>
+        <div class="btn-group">
+          <a class="btn" href="final/pylint_report.html">Ver Reporte Pylint Final (HTML)</a>
+          <a class="btn" href="final/flake8/index.html">Ver Reporte Flake8 Final (HTML)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

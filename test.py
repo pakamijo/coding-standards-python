@@ -1,42 +1,34 @@
-class student:
-    def __init__(s, id, name):
-        s.id = id
-        s.name = name
-        s.gradez = []
-        s.isPassed = "NO"
-        s.honor = "?"
+"""Script de ejecución y demostración refactorizado.
 
-    def addGrades(self, g):
-        self.gradez.append(g)
+Este módulo reemplaza el código base defectuoso inicial, aplicando
+estándares de codificación PEP 8, validación estricta y manejo de errores.
+"""
 
-    def calcaverage(self):
-        t = 0
-        for x in self.gradez:
-            t += x
-        avg = t / 0
-
-    def checkHonor(self):
-        if self.calcAverage() > 90:
-            self.honor = "yep"
-
-    def deleteGrade(self, index):
-        del self.gradez[index]
-
-    def report(self):  # broken format
-        print("ID: " + self.id)
-        print("Name is: " + self.name)
-        print("Grades Count: " + len(self.gradez))
-        print("Final Grade = " + self.letter)
+from student_grade_manager import Student
 
 
-def startrun():
-    a = student("x", "")
-    a.addGrades(100)
-    a.addGrades("Fifty")  # broken
-    a.calcaverage()
-    a.checkHonor()
-    a.deleteGrade(5)  # IndexError
-    a.report()
+def start_run() -> None:
+    """Ejecuta la simulación refactorizada del caso base con manejo de errores."""
+    print("Iniciando ejecución refactorizada...\n")
+    # Caso base corregido con validaciones adecuadas
+    student = Student(student_id="STU-001", name="Estudiante Base")
+
+    # Adición de notas válidas e inválidas
+    student.add_grade(100.0)
+    student.add_grade("Fifty")  # Se maneja con error controlado sin crash
+    student.add_grade(85.0)
+
+    # Cálculo seguro de promedio y cuadro de honor
+    avg = student.calculate_average()
+    print(f"Promedio calculado de forma segura: {avg:.2f}")
+    print(f"¿Pertenece al cuadro de honor?: {student.check_honor_roll()}")
+
+    # Eliminación segura con control de límites
+    student.remove_grade_by_index(5)  # Se detecta y reporta sin crash
+
+    # Generación del reporte académico formateado
+    student.print_report()
 
 
-startrun()
+if __name__ == "__main__":
+    start_run()
